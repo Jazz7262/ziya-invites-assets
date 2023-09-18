@@ -1,0 +1,144 @@
+.root {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #002c6a;
+
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.root::before {
+    content: "";
+    width: 200%;
+    height: 200%;
+    position: fixed;
+    bottom: -50px;
+    left: -50px;
+    background: radial-gradient(
+        circle,
+        rgb(255, 255, 255) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.1;
+}
+
+.root::after {
+    content: "";
+    width: 200%;
+    height: 200%;
+    position: fixed;
+    top: -50px;
+    left: -50px;
+    background: radial-gradient(
+        circle,
+        rgb(255, 255, 255) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.1;
+}
+
+.img-wrapper {
+    border: 5px solid;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.img-wrapper-animate {
+    animation: img-wrapper-animation 1s ease-in-out;
+    opacity: 1;
+}
+
+@keyframes img-wrapper-animation {
+    from {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+img {
+    width: 180px;
+    transition: ease 0.5s;
+}
+
+.img-animate {
+    animation: img-animation 1s;
+}
+
+@keyframes img-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+h1 {
+    font-family: "Nunito", serif;
+    font-size: 3.5rem;
+    margin-bottom: 5rem;
+}
+
+h1 span {
+    opacity: 0;
+    position: relative;
+}
+
+.brand-animate {
+    opacity: 1;
+    animation: brand-animation 1s ease;
+}
+
+@keyframes brand-animation {
+    from {
+        opacity: 0;
+        top: 1.5rem;
+    }
+
+    to {
+        opacity: 1;
+        top: 0rem;
+    }
+}
+
+.info {
+    opacity: 0;
+}
+
+.info-animate {
+    opacity: 1;
+    animation: info-animation 1s ease;
+}
+
+@keyframes info-animation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+h2 {
+    font-weight: 400;
+    font-family: "Nunito", serif;
+}
+
+.icon-wrapper svg {
+    fill: #fff;
+}
